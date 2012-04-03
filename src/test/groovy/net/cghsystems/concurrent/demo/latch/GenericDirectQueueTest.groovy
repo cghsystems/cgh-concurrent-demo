@@ -30,18 +30,18 @@ class GenericDirectQueueTest {
      */
     @Test
     void demostrateLatchUsage() {
-        final expectedNumberOFMessages = 3
-        final latch = new CountDownLatch(expectedNumberOFMessages)
+        final expectedNumberOfMessages = 3
+        final latch = new CountDownLatch(expectedNumberOfMessages)
 
         //Quick way of implementing the GenericDirectQueueListener interface
         final listener = [ onMessageSent: { latch.countDown() } ]
         final queue = new GenericDirectQueue()
         queue.addListener(listener)
 
-        //Groovy way of running a cncurrent thread
+        //Groovy way of running a concurrent thread
         Thread.start {
             //Groovy way of executing an action x number of times
-            expectedNumberOFMessages.times {
+            expectedNumberOfMessages.times {
                 //Send the message (the it represents the current passed from times)
                 queue.sendMessage(it)
             }
@@ -50,6 +50,6 @@ class GenericDirectQueueTest {
         //Its important to check the result of latch.await(o,o) as in not doing so you cannot be 100% that you received all
         //of the messages you were hoping for
         assert true == latch.await(1000,TimeUnit.MILLISECONDS),
-        "Expecting ${expectedNumberOFMessages} messages. Still awaiting ${latch.getCount()} messages"
+        "Expecting ${expectedNumberOfMessages} messages. Still awaiting ${latch.getCount()} messages"
     }
 }

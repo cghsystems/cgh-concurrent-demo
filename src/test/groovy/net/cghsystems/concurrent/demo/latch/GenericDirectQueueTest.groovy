@@ -47,6 +47,8 @@ class GenericDirectQueueTest {
             }
         }
 
+        //Its important to check the result of latch.await(o,o) as in not doing so you cannot be 100% that you received all
+        //of the messages you were hoping for
         assert true == latch.await(1000,TimeUnit.MILLISECONDS),
         "Expecting ${expectedNumberOFMessages} messages. Still awaiting ${latch.getCount()} messages"
     }

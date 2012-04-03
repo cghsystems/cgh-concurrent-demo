@@ -16,7 +16,7 @@ class GenericDirectQueueTest {
     @Test
     void demonstrateSimpleMessagingStructure() {
         final expectedMessage = "Hello"
-        final listener =  [ onMessageSent: { println it }  ]
+        final listener =  [ onMessageSent: { assert it == expectedMessage }  ]
 
         def queue = new GenericDirectQueue()
         queue.addListener(listener)

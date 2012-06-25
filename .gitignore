@@ -1,3 +1,4 @@
+/build
 *.iml
 *.ipr
 *.log
@@ -6,8 +7,6 @@
 .checkstyle
 .classpath
 .externalToolBuilders/
-.idea/
-field-trial-questionnaire-service/field-trial-questionnaire-service-war/overlays/
 .project
 .settings
 .springBeans
@@ -20,4 +19,6 @@ private
 profiles.xml
 target
 Plan.xml
-release.properties
+build
+.gradle
+.scala_dependencies

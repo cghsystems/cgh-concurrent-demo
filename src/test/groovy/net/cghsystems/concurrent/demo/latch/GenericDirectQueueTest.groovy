@@ -7,10 +7,12 @@ import org.junit.Test
 
 
 
+
+
 class GenericDirectQueueTest {
 
     /**
-     * Demonstrates that when a message is sent to a synchronous queue that it is received and the 
+     * Demonstrates that when a message is sent to a synchronous queue that it is received and the
      * {@link GenericDirectQueueListener#onMessageSent(Object)} is notified
      */
     @Test
@@ -25,7 +27,7 @@ class GenericDirectQueueTest {
     }
 
     /**
-     * Demonstrates that when a number of messages are sent to an asynchronous queue that they are received and the 
+     * Demonstrates that when a number of messages are sent to an asynchronous queue that they are received and the
      * {@link GenericDirectQueueListener#onMessageSent(Object)} is notified
      */
     @Test

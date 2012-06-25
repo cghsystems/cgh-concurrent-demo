@@ -1,0 +1,3 @@
+== cgh-concurrent-demo
+
+A skunk works project containing examples of how to use and test with Java 5 concurrency tools

@@ -23,7 +23,4 @@ class GenericDirectQueue {
         //Notify every registered listener
         listeners.each { it.onMessageSent(message) }
     }
-    
-    
-    
 }
